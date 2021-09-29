@@ -26,7 +26,7 @@ export default {
     }
     p{
         color: gray;
-        line-height: 10px;
+        margin: 0;
     }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-    <div class="row music-container">
-      <div v-for="(music,index) in dataMusics" :key="index" class="col-lg-3 col-md-4 col-6 mb-4 ">
+    <div class="row music-container row-cols-lg-5 ">
+      <div v-for="(music,index) in dataMusics" :key="index" class="col-md-4 col-sm-6 col-12 mb-4">
         <SingleMusic :music="music" />
       </div>
     </div>
