@@ -1,21 +1,32 @@
 <template>
-    <div class="col-lg-2 col-md-4 col-6 single-music-container">
-        <img :src="image" :alt="title">
+    <div  class="single-music-container p-4">
+        <img class="img-fluid " :src="music.poster" :alt="title">
 
-        <h1>Titolo</h1>
-        <p>paragrafo</p>
+        <h1 class="text-center mb-4 mt-3">{{music.title}}</h1>
+        <p class="text-center">{{music.author}}</p>
+        <p class="text-center">{{music.year}}</p>
+
     </div>
 </template>
 
 <script>
 export default {
     name :"SingleMusic",
-    props : ["image", "title", "author", "year"]
+    props : ["music"]
 }
 </script>
 
 <style lang="scss" scoped>
 .single-music-container{
-    background-color: #2c2c48;
+    background-color: #2e3a46;
+    height: 100%;
+    h1 {
+        color: white;
+        font-size: 1.5rem;
+    }
+    p{
+        color: gray;
+        line-height: 10px;
+    }
 }
 </style>

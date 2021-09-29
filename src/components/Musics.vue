@@ -1,9 +1,10 @@
 <template>
   <div class="container-fluid">
     <div class="row music-container">
-      <SingleMusic :image="SingleMusic.poster" :title="SingleMusic.title" :author="SingleMusic.author" :year="SingleMusic.year" />
+      <div v-for="(music,index) in dataMusics" :key="index" class="col-lg-3 col-md-4 col-6 mb-4 ">
+        <SingleMusic :music="music" />
+      </div>
     </div>
-    
   </div>
 
   
@@ -31,7 +32,7 @@ export default {
 
         // console.log(response.data.response);
 
-        this.dataMusics = response.data.response
+        this.dataMusics = response.data.response.slice()
 
         console.log(this.dataMusics);
     })
@@ -44,10 +45,13 @@ export default {
 <style scoped lang="scss">
 
 .container-fluid{
-  background-color: black;
+  background-color: #1e2d3b
+;
 }
 
 .row.music-container {
-    padding: 50px 200px;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 </style>

@@ -17,7 +17,7 @@ i {
 }
 
 .container-fluid {
-    background-color: #2c2c48;
+    background-color: #2e3a46;
     padding: 15px;
 }
 
