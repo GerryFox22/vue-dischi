@@ -1,5 +1,5 @@
 <template>
-    <select v-model="selected" @click.prevent="$emit ('search', selected)">
+  <select v-model="selected" @click.prevent="$emit ('search', selected)">
         <option value="">Tutti i generi</option>
         <option value="Rock" >Rock</option>
         <option value="Pop">Pop</option>
@@ -10,19 +10,15 @@
 
 <script>
 export default {
-    name : "Select",
+    name : "SelectArtist",
     data : function(){
         return {
             selected:"",
         }
     },
-    methods : {
-       
-    },
- 
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 
 </style>

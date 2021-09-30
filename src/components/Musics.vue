@@ -1,7 +1,8 @@
 <template>
   <div class="container-fluid">
-    <div class="select-container">
-      <Select @search="cercaFiltro"/>
+    <div class="select-container d-flex justify-content-center p-3">
+      <SelectGenre @search="cercaFiltro"/>
+      <SelectArtist  @search="cercaFiltro" />
     </div>
     <div class="row music-container row-cols-lg-5 ">
       <div v-for="(music,index) in filteredDataMusics" :key="index" class="col-md-4 col-sm-6 col-12 mb-4">
@@ -15,14 +16,16 @@
 
 <script>
 import SingleMusic from "../components/SingleMusic.vue";
-import Select from "../components/Select.vue";
+import SelectGenre from "../components/SelectGenre.vue";
+import SelectArtist from "../components/SelectArtist.vue";
 import axios from "axios";
 export default {
   name: 'Musics',
 
   components : {
     SingleMusic,
-    Select,
+    SelectGenre,
+    SelectArtist,
   },
 
   data : function (){
@@ -43,7 +46,10 @@ export default {
     filteredDataMusics (){
       let newDataMusics = this.dataMusics.filter (
         (element) => {
-          return element.genre.includes(this.filtroSelezionato)
+          if (element.genre.includes(this.filtroSelezionato)){
+            return element.genre.includes(this.filtroSelezionato);
+          } else 
+             return element.author.includes(this.filtroSelezionato);
         }
       )
       return newDataMusics;
